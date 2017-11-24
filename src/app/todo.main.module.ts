@@ -7,6 +7,8 @@ import { MainRouter } from './todo.main.router';
 
 import { MainComponent } from './todo.main.component';
 
+import { UtilsService } from './Services/todo.utils.service';
+
 @NgModule({
     declarations: [
         MainComponent
@@ -17,6 +19,7 @@ import { MainComponent } from './todo.main.component';
         MainRouter
     ],
     exports: [],
+    providers: [UtilsService],
     bootstrap: [MainComponent]
 })
 export class MainModule {

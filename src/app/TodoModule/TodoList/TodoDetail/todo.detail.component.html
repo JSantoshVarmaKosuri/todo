@@ -1,0 +1,9 @@
+<section class="todo-detail" *ngIf="todo">
+    <div>
+        <p>{{todo.title}}</p>
+        <div class="glyphicon glyphicon-trash" (click)="onRemove()"></div>
+    </div>
+    <p>{{todo.createdAt}}</p>
+    <hr />
+    <p>{{todo.description}}</p>
+</section>

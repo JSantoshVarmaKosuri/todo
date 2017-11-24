@@ -1,0 +1,42 @@
+.todo-card {
+    width: 92%;
+    margin: 1em auto;
+    padding: 1em;
+    border: 1px solid #225986;
+    border-radius: 0.4em;
+    background-color: #97d1ff;
+    color: #3c3c3c;
+    box-shadow: 5px 5px 10px #688092;
+
+    div {
+        display: flex;
+
+        p {
+            flex: 1;
+            font-weight: bold;
+            font-size: 1.2em;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-right: 1em;
+        }
+
+        div {
+            font-size: 1.5em;
+        }
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    p:last-child {
+        font-size: 1em;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+
+    hr {
+        border-top: 1px solid #225986;
+    }
+}

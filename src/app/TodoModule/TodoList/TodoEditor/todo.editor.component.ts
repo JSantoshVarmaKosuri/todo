@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UtilsService, FormErrors } from '../../../Services/todo.utils.service';
 
 @Component({
     selector: 'todo-editor',
@@ -10,13 +11,33 @@ export class TodoEditorComponent {
     @Output() dismiss = new EventEmitter<any>();
     @Output() create = new EventEmitter<any>();
 
-    onCreateTodo(form: NgForm) {
-        form.reset();
-        this.create.emit(form.value);
-        this.dismiss.emit();
+    errors: FormErrors;
+
+    constructor(private utilsService: UtilsService) {
+        this.errors = {
+            valid: false,
+            message: null,
+            controls: {
+                tittle: {
+                    required: false
+                },
+                desctription: {
+                    required: false
+                }
+            }
+        };
     }
 
-    onDismiss() {
+    onCreateTodo(form: NgForm) {
+        if (form.value.title && form.value.description) {
+            this.create.emit(form.value);
+            form.reset();
+            this.dismiss.emit();
+        }
+    }
+
+    onDismiss(form: NgForm) {
+        form.reset();
         this.dismiss.emit();
     }
 }

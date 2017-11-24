@@ -9,10 +9,20 @@ $background: #def5ff;
     border: 1px solid #c5c5c5; 
     border-radius: 5px;
     background-color: $background;
+    box-shadow: 0px 0px 20px #307394;
     z-index: 10;
 }
 
 .todo-editor {
+
+    .cstoum-input-error {
+        color: #900000;
+        margin-top: 5px;
+    }
+
+    input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
+        border: 1px solid #900000 !important;
+    }
 
     input, textarea {
         outline: 0px !important;

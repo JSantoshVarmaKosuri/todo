@@ -1,0 +1,35 @@
+section.todo-detail {
+    padding: 1em;
+    
+    div {
+        display: flex;
+
+        p {
+            flex: 1;
+            font-weight: bold;
+            font-size: 1.2em;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-right: 1em;
+        }
+
+        div {
+            font-size: 1.5em;
+        }
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    p:last-child {
+        font-size: 1em;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+
+    hr {
+        border-top: 1px solid #225986;
+    }
+}

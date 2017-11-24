@@ -1,16 +1,22 @@
 <section class="todo-modal">
     <section class="todo-editor">
-        <form (ngSubmit)="onCreateTodo(f)" #f="ngForm">
+        <form (ngSubmit)="onCreateTodo(f)" #f="ngForm" novalidate>
             <div class="form-group">
                 <label class="form-label" for="title" >Title: </label>
-                <input class="form-control" type="text" id="title" name="title" ngModel/>
+                <input class="form-control" type="text" id="title" name="title" autocomplete="off" ngModel required/>
+                <p class="cstoum-input-error"
+                    *ngIf="f.controls.title && f.controls.title.touched && f.controls.title.errors && f.controls.title.errors.required">
+                    *Title is required.</p>
             </div>
             <div class="form-group">
                 <label class="form-label" for="description" >Description: </label>
-                <textarea class="form-control" type="text" id="description" name="description" rows="5" ngModel></textarea>
+                <textarea class="form-control" type="text" id="description" name="description" rows="5" autocomplete="off" ngModel required></textarea>
+                <p class="cstoum-input-error"
+                *ngIf="f.controls.description && f.controls.description.touched && f.controls.description.errors && f.controls.description.errors.required">
+                    *Description is required.</p>
             </div>
             <button class="btn btn-primary" type="submit">Create Todo</button>
         </form>
     </section>
 </section>
-<section class="todo-modal-background" (click)="onDismiss()"></section>
+<section class="todo-modal-background" (click)="onDismiss(f)"></section>

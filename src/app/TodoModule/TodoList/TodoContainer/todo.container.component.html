@@ -1,6 +1,10 @@
 <section class="todo-body">
     <todo-editor *ngIf="createTodo" (create)="onCreateTodo($event)" (dismiss)="onOpenEditor()"></todo-editor>
-    
+
+    <div>
+        <todo-card *ngFor="let todo of (todosState | async).todos" [todo]="todo" (edit)="onEditTodo($event)"></todo-card>
+    </div>
+
     <div class="todo-hovering-btn add-btn" *ngIf="!createTodo" (click)="onOpenEditor()">
         <span class="glyphicon glyphicon-plus"></span>
     </div>
