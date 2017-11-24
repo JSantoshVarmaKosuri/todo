@@ -1,0 +1,7 @@
+<section class="todo-body">
+    <todo-editor *ngIf="createTodo" (create)="onCreateTodo($event)" (dismiss)="onOpenEditor()"></todo-editor>
+    
+    <div class="todo-hovering-btn add-btn" *ngIf="!createTodo" (click)="onOpenEditor()">
+        <span class="glyphicon glyphicon-plus"></span>
+    </div>
+</section>
